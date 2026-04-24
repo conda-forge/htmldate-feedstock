@@ -1,13 +1,13 @@
 context:
-  version: 1.9.3
+  version: "1.9.4"
 
 package:
   name: htmldate
   version: ${{ version }}
 
 source:
-- url: https://pypi.org/packages/source/h/htmldate/htmldate-${{ version }}.tar.gz
-  sha256: ac0caf4628c3ded4042011e2d60dc68dfb314c77b106587dd307a80d77e708e9
+  - url: https://pypi.org/packages/source/h/htmldate/htmldate-${{ version }}.tar.gz
+    sha256: 1129063e02dd0354b74264de71e950c0c3fcee191178321418ccad2074cc8ed0
 
 build:
   noarch: python
@@ -15,28 +15,28 @@ build:
   script: ${{ PYTHON }} -m pip install .
   python:
     entry_points:
-    - htmldate  =  htmldate.cli:main
+      - htmldate  =  htmldate.cli:main
 
 requirements:
   host:
-  - python ${{ python_min }}.*
-  - pip
-  - setuptools
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools
   run:
-  - python >=${{ python_min }}
-  - charset-normalizer >=3.4.0
-  - dateparser >=1.1.2
-  - lxml <6,>=5.3.0
-  - python-dateutil >=2.9.0.post0
-  - urllib3 <3,>=1.26
+    - python >=${{ python_min }}
+    - charset-normalizer >=3.4.0
+    - dateparser >=1.1.2
+    - lxml <6,>=5.3.0
+    - python-dateutil >=2.9.0.post0
+    - urllib3 <3,>=1.26
 
 tests:
-- python:
-    imports:
-    - htmldate
-    pip_check: true
-- script:
-    - htmldate --help
+  - python:
+      imports:
+        - htmldate
+      pip_check: true
+  - script:
+      - htmldate --help
 
 about:
   homepage: https://github.com/adbar/htmldate
@@ -46,4 +46,4 @@ about:
 
 extra:
   recipe-maintainers:
-  - moritzwilksch
+    - moritzwilksch
