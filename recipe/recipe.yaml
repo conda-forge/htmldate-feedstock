@@ -1,5 +1,5 @@
 context:
-  version: "1.10.0"
+  version: "1.11.0"
 
 package:
   name: htmldate
@@ -7,11 +7,11 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/h/htmldate/htmldate-${{ version }}.tar.gz
-    sha256: a38df10772ab5d7dbb11896e3f6a852a8491fb1b0965465bc174e23fc2baae58
+    sha256: e099a58143d5ff32471f2aa8770247e12f0f5bdff62f2df74f833277fd0071b6
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: ${{ PYTHON }} -m pip install .
   python:
     entry_points:
